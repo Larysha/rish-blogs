@@ -25,7 +25,7 @@ organizations:
     url: https://www.sun.ac.za/english/
 
 # Short bio (displayed in user profile at end of posts)
-bio: tracking my learning journey in OMICS data science 
+bio: Tracking my learning journey in OMICS data science 
 
 # Social Networking
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.

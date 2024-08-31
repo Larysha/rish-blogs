@@ -1,6 +1,6 @@
 ---
 title: Getting started with WSL for Bioinformatics
-date: 2013-08-22
+date: 2023-08-22
 ---
 
 A beginner-friendly, high-level overview and comprehensive walk-through of the set up of your bioinformatics terminal environment in Windows with the Windows Subsystem for Linux (WSL2)
