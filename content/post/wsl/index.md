@@ -1,9 +1,20 @@
 ---
-title: Getting started with WSL for Bioinformatics
-date: 2023-08-22
+title: 💻 WSL for bioinformatics set up
+summary: A beginner guide to setting up a fully functional (and pretty) WSL2 environment for bioinformatics analysis
+date: 2023-10-26
+authors:
+  - admin
+tags:
+  - WSL
+  - VSCode
+  - Git
+  - Python
+  - R
+image:
+  caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
 ---
 
-A beginner-friendly, high-level overview and comprehensive walk-through of the set up of your bioinformatics terminal environment in Windows with the Windows Subsystem for Linux (WSL2)
+A beginner-friendly walk-through to get your bioinformatics terminal environment in Windows set up with the Windows Subsystem for Linux (WSL2). 
 
 Pre-requisites: a basic understanding of navigating a Linux Bash terminal file structure and an interest in getting started with bioinformatics.
 
@@ -11,25 +22,25 @@ Pre-requisites: a basic understanding of navigating a Linux Bash terminal file s
 
 - Why WSL? 
 - Set-up WSL and the Fluent Terminal with optional pretty-fication. 
-- How to navigate your Windows files through the Linux shell 
-- Installing software and adding your programs to $PATH to access on both Linux and Windows systems 
+- How to navigate your Windows files through the Linux shell with `mnt`
+- Installing software and adding your programs to `$PATH` to access on both Linux and Windows systems 
 - Setting up your tools and software for bioinformatics analysis including:
 	- Conda, Python and Git
 	- R and DevTools
 	- Integrating VSCode with WSL
-	- Nextflow and Docker 
+	- Nextflow
 
 ### Why do we need WSL?
 
-The Unix command line is truly the foundational tool for bioinformaticians - an interface or 'shell' that allows you to access other servers, manipulate large files with ease and create and run your scripts. The shell enables the most efficient way to analyse data, by allowing automation and batch processing of scripts with a high degree of flexibility by stringing together multiple, customisable commands. It is for this reason that most tools and third-party bioinformatics software is designed to run in this environment.
+The Unix command line is truly the foundational tool for bioinformaticians - an interface or 'shell' that allows you to access other servers, manipulate large files with ease and create and run your scripts. The shell enables an efficient way to analyse multiple data file, by allowing automation and batch processing of scripts with a high degree of flexibility by stringing together multiple, customisable commands. It is for this reason that so many tools and third-party bioinformatics software packages are designed to run in this environment.
 
-Typically, the command line works through a shell program or interface (like Bash), which is the build-in terminal on a Linux Debian OS. Alternatively, you could use the 'close-enough' terminal on iOS, which provides a subset of Unix commands and functionalities that are sufficient for bioinformatics tasks. 
+Typically, the command line works through a shell program or interface (like Bash), which is the build-in terminal on a Linux Debian OS. Alternatively, you could use the 'close-enough' terminal on iOS, which provides a subset of Unix commands and functionalities that are sufficient for bioinformatics tasks (you may never notice a difference).
 
 This has left Windows users in a bit of pickle when they want to perform bioinformatics analysis because the Windows PowerShell works very differently to a Unix shell. In the past, Windows users have had to split their hard-drives, install virtual boxes, use third-party tools like Cygwin or buy secondary machines - none of which provide a smooth work experience. 
 
-Enter the Windows Subsystem for Linux or WSL, first released in 2016. Since then, its capabilities have improved to WSL2, which boasts a seamless and powerful combination of Unix command line tools on a Windows machine, with full access to the file systems of both OSs. It offers a wide variety of Linux OS distributions, such as Kali and Arch Linux, but if you're here to run bioinformatics programs, you'll probably want Ubuntu, since this is a Debian distribution that is compatible with almost all third-party BiX tools. 
+Enter the Windows Subsystem for Linux or WSL, first released in 2016. Since then, its capabilities have improved to WSL2, which boasts a seamless and powerful combination of Unix command line tools on a Windows machine, with full access to the file systems of both OSs. It offers a wide variety of Linux OS distributions, such as Kali and Arch Linux, but if you're here to run bioinformatics programs, you'll probably want Ubuntu, since this is a Debian distribution that is compatible with almost all third-party BiX tools (to save some syllables, I'll be referring to bioinformatics as BiX from here on 🥱).
 
-Okay, sounds great - you can use a Linux terminal in Windows - but how do we do it and how do we optimise it for a BiX set-up? (to save some syllables, I'll be referring to bioinformatics as BiX from here on 🥱)
+Okay, sounds great - you can use a Linux terminal in Windows (in fact, you have a compact Linux distribution *inside* your Windows OS and communicating with it) - but how do we do it and how do we optimise it for a BiX set-up? 
 
 ### Installing WSL Ubuntu 
 
@@ -44,7 +55,7 @@ It's as simple as that.
 
 The Ubuntu distribution will be installed by default - open it up:
 - Once it has finished its initial setup, you will need to create a username and password (this does not need to match your Windows user credentials).
-- Remember your password because you will be asked for it every time you want to do anything in your root (`/`) directory with the `sudo` command. Note you will not see anything when you type a password in terminal, but it does recognise what you type.
+- Remember your password because you will be asked for it every time you want to do anything in your root (`/`) directory with the `sudo` command. Note that you will not see anything when you type a password in terminal, but it does recognise what you type.
 
 Now run the following commands:
 `sudo apt update` then
@@ -69,8 +80,6 @@ The power of this terminal is that you can open multiple tabs for different term
 This section is optional and for those who want to "play" and explore some advanced features of the terminal - it has no effect on functionality, but might make you feel kinda cool when your prompt flashes at you in bright pink 💃 The `settings` -> `themes` section of Fluent Terminal has some colours and aesthetics you can easily change if you don't want to go too far down the rabbit hole.
 
 If you would *really* like add some flair you can customise the wording and colour of your prompt by editing your `~/.bashrc`  file and changing your prompt string variable `PS1=`. You can read more about that [here](https://phoenixnap.com/kb/change-bash-prompt-linux) . 
-
-Alternatively, you may be interested in simply using a pre-built theme, in which case I would recommend [oh-my-bash](https://github.com/ohmybash/oh-my-bash) - this will take you to a GitHub page where you can download the tool. *Note that downloading the tool will create a new `.bashrc` file!*  Your old `.bashrc` will still be there - but it'll have a suffix that looks something like this: `omb-backup-202...` you can copy and paste any important aliases, etc. from this file into the new one. To use a theme, open up the `.bashrc` file with something like `nano .bashrc` and edit the `OSH_THEME` variable to a theme of your choice, which you can explore [here](https://github.com/ohmybash/oh-my-bash/wiki/Themes).
 
 ### How do I access my Windows Files?
 The WSL system is integrated, but still separate from you Windows files. If you type `cd` you will find yourself in the `/home` Linux directory, which is generally where you will be working in your Linux system. However, if you're working in a Windows directory you can access easily by "mounting" into you C: drive with `cd /mnt/c/Users/windows_usrname/...`
@@ -193,24 +202,12 @@ Once R is installed, you can run R through terminal by simply typing `R` - this 
 install.packages("devtools")
 ```
 You can return your WSL terminal by typing `q()` and `n` 
-
-### Setting up Docker through WSL
-Docker is a popular container application that lets you manage and run isolated applications without having to rely on the host machine - this means that headaches around dependencies or code reproducibility are navigated by putting every requirement into one container that works the same way for everyone. There is a bit of a learning curve to get started with this tool, but it is incredibly useful and many bioinformatic tools are available as Docker containers. You can learn more about them [here](https://docs.docker.com/get-started/)
-
-To set it up in WSL2 you can read through their more detailed instructions [here](https://docs.docker.com/desktop/wsl/) but if you want to set it up quickly you can do the following:
-
-1. Download and install the latest version of [Docker Desktop for Windows](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe).
-2. During installation, it may suggest using the WSL feature - agree to this (it is currently the recommended selection)
-3. Start Docker Desktop in **Windows** -> navigate to settings -> general tab -> make sure the "use WSL2 based engine" selection is turned on
-
-To make sure it is working in terminal you can type `docker --version` - note that docker in WSL only works when the desktop application is active.
-
 ### Setting up Nextflow
-If you're conducting BiX analysis, at some point you may want to create a pipeline - that is, a scalable, reproducible workflow so that you can run your scripts again and again in different environments and only have to change the inputs. This is where something like Nextflow is really useful - and you can check out their page [here](https://www.nextflow.io/index.html#GetStarted). 
+If you're conducting an analysis, at some point you may want to create a pipeline - that is, a scalable, reproducible workflow so that you can run your scripts again and again in different environments and only have to change the inputs. This is where something like Nextflow is really useful - and you can check out their page [here](https://www.nextflow.io/index.html#GetStarted). 
 
 it's real easy to set up:
 ```bash
-# check that you have Java v 11 or later install with 
+# check that you have Java v 11 or later installed with 
 java --version
 
 # if you don't have Java or the correct version, run:
@@ -228,11 +225,4 @@ To find out more about Nextflow pipelines, you can visit the [nf-co.re site](htt
 
 
 ### Integrating VSCode
-Everyone has their favourite place to write and edit code - Atom, Sublime, Nano and even Vim (those folks are wild) - but VSCode is a favourite for a reason and you can use it to edit directly through WSL by installing VSCode on your Windows machine and then installing the [Remote Extension Development Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extension through the VSCode extensions tab. In WSL, run `sudo apt update && updrade` and you can now run `code .` to open your current directory in VSCode. VSCode also integrates well with the [Fluent Terminal Extension](Xherdi.fluent-terminal) that allows you to go in the opposite direction and open any directory open in VSCode in Fluent Terminal. 
-
-________________________________
-
-Utilising  a graphics card to take advantage of libraires like TensorFlow is another useful tool to have set up in your environment and GPU Nvidia Drivers and CUDA will be covered in a separate post... For now you should have a foundational and well-integrated environment set up and you are ready to start downloading BiX tools, writing scripts and analysing data! 
-
-
-
+Everyone has their favourite place to write and edit code - Atom, Sublime, Nano or Vim (for the brave) - but VSCode is a favourite for a reason and you can use it to edit directly through WSL by installing VSCode on your Windows machine and then installing the [Remote Extension Development Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extension through the VSCode extensions tab. In WSL, run `sudo apt update && updrade` and you can now run `code .` to open your current directory in VSCode. VSCode also integrates well with the [Fluent Terminal Extension](Xherdi.fluent-terminal) that allows you to go in the opposite direction and open any directory in VSCode with Fluent Terminal. 
