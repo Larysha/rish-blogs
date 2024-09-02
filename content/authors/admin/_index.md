@@ -52,8 +52,8 @@ highlight_name: true
 website: ""
 ---
 
-Hi, I’m Larysha! I will soon be embarking on my PhD in Computational Biology and Bioinformatics at Stellenbosch University, and in collaboration with the IPK Leibniz Institute. My research interest is to develope and apply deep learning models and bioinformatic analyses to large-scale OMICS datasets, to understand how the transcriptome of plant crops are regulated. I'm focusing on grapevine (Vitis vinifera) because here in the Cape regions of South Africa, grapevine cultivation is one of the most socio-economically important crops. 
+Hello, I’m Larysha! I'm about to begin my PhD in Computational Biology and Bioinformatics at Stellenbosch University, in collaboration with the IPK Leibniz Institute. My research focuses on developing and applying deep learning models and bioinformatic analyses to large-scale OMICS datasets to understand how the transcriptome of plant crops is regulated. I'm particularly interested in grapevine (Vitis vinifera) because, in the Cape regions of South Africa, grapevine cultivation is one of the most socio-economically important crops.
 
-My hope is that this research will inform future studies and industry breeding programs, helping us harness the existing natural diversity in grapevine to protect against climate change, disease and growing demand. This could lead to more resilient and sustainable agricultural practices.
+I hope this research will inform future studies and industry breeding programs, helping us harness the existing natural diversity in grapevine to select variants that combat climate change, disease, and other stresses. This could lead to more resilient and sustainable agricultural practices.
 
-I've started this blog to track my personal learning journey in Computational Biology and record what I learn for myself as well as others. I'm a biologist by training and the world of computer science and programming is still relatively new to me, so I hope you can find something valueable here.
+I've started this blog to track my personal learning journey in Computational Biology and to record what I learn for myself and others. I hope you find something valuable here.
