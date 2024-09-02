@@ -1,32 +1,17 @@
 ---
-title: 'Home'
-date: 2023-10-24
+title: 'Blog Home'
 type: landing
+
 sections:
   - block: resume-biography
     content:
       # The user's folder name in content/authors/
       username: admin
-    design:
+      design:
       spacing:
         padding: [0, 0, 0, 0]
       biography:
         style: 'text-align: justify; font-size: 0.8em;'
-  - block: collection
-    content:
-      filters:
-        folders:
-          - post
-    design:
-      spacing:
-        padding: ['3rem', 0, '6rem', 0]
----
-
----
-title: 'Blog Home'
-type: landing
-
-sections:
   - block: collection
     id: posts
     content:
@@ -59,4 +44,14 @@ sections:
       view: compact
       columns: '1'
       flip_alt_rows: false
+---
+
+
+---
+title: 'Home'
+date: 2023-10-24
+type: landing
+sections:
+
+
 ---
